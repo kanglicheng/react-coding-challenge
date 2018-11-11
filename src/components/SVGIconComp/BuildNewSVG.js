@@ -2,8 +2,8 @@ import React from 'react';
 
 const BuildNewSVG = (props) =>{
   let bg = props.color || '#000';
-  let height = props.height || props.size || '24';
-  let width = props.width || props.size || '24';
+  let height = props.height || props.size || '30';
+  let width = props.width || props.size || '30';
   let path1 = props.path1 || 'M7 10l5 5 5-5z';
   let path2 = props.path2;
   let fill1 = props.fill1 || '';

@@ -48,19 +48,3 @@ export class TwitterIcon extends React.Component {
     );
   }
 }
-
-
-export class AppStoreIcon extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
-    const {height, width, color, size, fill1, fill2, viewBox, className} = this.props;
-    return (
-      <BuildNewSVG class={className} color={color} height={height} viewBox={viewBox} width={width} size={size}
-        path1=''
-        fill1={fill1} />
-    );
-  }
-}

@@ -1,6 +1,9 @@
 import React from 'react';
 import styles from './Footer.scss';
-import {FacebookIcon, TwitterIcon, InstagramIcon, AppStoreIcon} from '../SVGIconComp/SvgIcons';
+import {FacebookIcon, TwitterIcon, InstagramIcon} from '../SVGIconComp/SvgIcons';
+import appStoreLogo from '../../../assets/store/app-store.svg';
+import playStoreLogo from '../../../assets/store/play-store.svg';
+import windowsStoreLogo from '../../../assets/store/windows-store.svg';
 
 
 export default class Footer extends React.Component {
@@ -19,7 +22,7 @@ export default class Footer extends React.Component {
 		                </nav>
 		                <div>Copyright &copy; 2016 DEMO Streaming. All Rights Reserved.</div>
 		                <div className={styles.external}>
-		                	<div className='social'>
+		                	<div className={styles.social}>
 		                		<FacebookIcon
 		                		fill1='#fff'
 		                		viewBox='0 0 166.1 299' />
@@ -30,10 +33,10 @@ export default class Footer extends React.Component {
 		                		fill1='#fff'
 		                		viewBox='-589 1042.5 200 200' />
 		                	</div>
-		                	<div className='store'>
-		                		<AppStoreIcon
-		                		fill1='#fff'
-		                		viewBox='-589 1042.5 200 200' />
+		                	<div className={styles.store}>
+		                		<img src={appStoreLogo} height='40' />
+		                		<img src={playStoreLogo} height='40' />
+		                		<img src={windowsStoreLogo} height='40' />
 		                	</div>
 		                </div>
 	                </div>

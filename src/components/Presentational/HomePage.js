@@ -11,9 +11,11 @@ export default class HomePage extends React.Component {
             return (
                 <div className={styles.container}>
                     <ActionBar />
-                    
+                        <Link to='/series'>
+                            <div>Series</div>
+                        </Link>
                         <Link to='/movies'>
-                            <div>Check products</div>
+                            <div>Movies</div>
                         </Link>
                     <Footer />
                 </div>

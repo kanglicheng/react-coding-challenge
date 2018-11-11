@@ -17,6 +17,8 @@ nav{
 }
 .external{
 	margin-top: 40px;
+	display: flex;
+	justify-content: space-between;
 }
 nav > a{
 	display: inline-block;
@@ -27,4 +29,14 @@ nav > a{
 nav > a:after{
 	content: '|';
 	margin-left: 10px;
+}
+nav > a:last-child:after{
+	content: none;
+}
+div.store img{
+	/*display: block;*/
+	margin-right: 20px;
+}
+.social *{
+	margin-right: 20px;
 }
