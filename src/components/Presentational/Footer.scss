@@ -1,0 +1,30 @@
+@import '../../../base.scss';
+
+.container{
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	color: grey;
+	background-color: $secondary-color;
+	height: 200px;
+	font-size: 13px;
+}
+.innerContainer{
+	margin: 40px 130px 40px;
+}
+nav{
+	margin-bottom: 15px;
+}
+.external{
+	margin-top: 40px;
+}
+nav > a{
+	display: inline-block;
+	margin-right: 10px;
+	color: #aeaeae;
+	text-decoration: none;
+}
+nav > a:after{
+	content: '|';
+	margin-left: 10px;
+}
