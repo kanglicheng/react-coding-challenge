@@ -1,7 +1,6 @@
 @import '../../../base.scss';
 
 .container{
-	position: absolute;
 	bottom: 0;
 	width: 100%;
 	color: grey;
@@ -39,4 +38,31 @@ div.store img{
 }
 .social *{
 	margin-right: 20px;
+}
+.fb{
+	content: url('../../../assets/social/facebook-white.svg');
+	height: 30px;
+	width: 30px;
+}
+.fb:hover{
+	cursor: pointer;
+	content: url('../../../assets/social/facebook-blue.svg');
+}
+.twitter{
+	content: url('../../../assets/social/twitter-white.svg');
+	height: 30px;
+	width: 30px;
+}
+.twitter:hover{
+	cursor: pointer;
+	content: url('../../../assets/social/twitter-blue.svg');
+}
+.insta{
+	content: url('../../../assets/social/instagram-white.svg');
+	height: 30px;
+	width: 30px;
+}
+.insta:hover{
+	cursor: pointer;
+	content: url('../../../assets/social/instagram-blue.svg');
 }

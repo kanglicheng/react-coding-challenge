@@ -6,17 +6,17 @@ import Movies from './components/Containers/Movies';
 
 
 export default class App extends React.Component {
-    render(){
+    render() {
         return (
             <BrowserRouter>
                 <div>
                     <Switch>
-                        <Route exact path='/' component={HomePage} />
-                        <Route path='/series' component={Series} />
-                        <Route path='/movies' component={Movies} />
+                        <Route exact path="/" component={HomePage} />
+                        <Route path="/series" component={Series} />
+                        <Route path="/movies" component={Movies} />
                     </Switch>
                 </div>
             </BrowserRouter>
-        )
+        );
     }
-};
+}

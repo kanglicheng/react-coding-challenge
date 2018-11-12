@@ -1,4 +1,15 @@
 .container{
 	background-color: #fff;
-    min-height: calc(100vh - 40px);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+.gridContainer{
+	display: grid;
+	grid-template-columns: repeat(7, 1fr);
+	grid-column-gap: 10px;
+	grid-row-gap: 10px;
+}
+.content{
+	flex: 1 0 auto;
 }

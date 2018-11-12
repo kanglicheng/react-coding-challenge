@@ -3,5 +3,11 @@
 
 .container{
 	background-color: #fff;
-    min-height: calc(100vh - 40px);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+.content{
+	flex: 1 0 auto;
 }

@@ -1,0 +1,26 @@
+@import '../../../base.scss';
+
+
+.gridItem{
+	height: 300px;
+}
+.productImageContainer{
+	height: 70%;
+	padding: 10px 0;
+}
+.productImage{
+	height: 100%;
+	img{
+		display: block;
+		height: 100%;
+		margin: auto;
+	}
+}
+.productDetailsContainer{
+	font-size: 14px;
+	font-weight: 300px;
+}
+.productTitle{
+	margin-top: 5px;
+	margin-bottom: 2px;
+}
