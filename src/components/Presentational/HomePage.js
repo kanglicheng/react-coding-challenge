@@ -12,10 +12,10 @@ export default class HomePage extends React.Component {
                 <ActionBar />
                 <div className={styles.content}>
                     <Link to="/series">
-                        <div>Series</div>
+                        <div className={styles.cards}>Series</div>
                     </Link>
                     <Link to="/movies">
-                        <div>Movies</div>
+                        <div className={styles.cards}>Movies</div>
                     </Link>
                 </div>
                 <Footer />

@@ -47,10 +47,12 @@ export default class Movies extends React.Component {
 
     render() {
     	const { total, items, productsFetchStatus } = this.state;
+        let route = this.props.location.pathname;
+        route = route.replace('/','').charAt(0).toUpperCase() + route.slice(2).toLowerCase();
 
         return (
             <div className={styles.container}>
-                <ActionBar />
+                <ActionBar route={route}/>
                 <div className={styles.content}>
                     {productsFetchStatus == 'fetched'
                         ? (

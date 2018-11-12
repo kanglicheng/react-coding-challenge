@@ -1,14 +1,32 @@
+@import '../../../base.scss';
+
 
 .container{
 	color: #fff;
 }
 .upper{
 	padding: 10px 130px;
-	/*background-image: linear-gradient(#0096ff, #006bff);*/
+	background-image: linear-gradient(#0096ff, #006bff);
 	font-size: 32px;
+	display: flex;
+	justify-content: space-between;
+}
+.actionBox{
+	display: flex;
+	font-size: 16px;
+	line-height: 38px;
+	div:hover{
+		cursor: pointer;
+	}
+}
+.trial{
+	background-color: #414141;
+	padding: 0 10px;
+	margin-left: 30px;
 }
 .lower{
 	padding: 13px 130px;
 	background-color: #414141;
 	font-size: 24px;
+	box-shadow: #bebebe 5px 5px 10px;
 }

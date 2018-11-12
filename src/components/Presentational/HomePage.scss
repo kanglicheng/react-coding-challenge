@@ -10,4 +10,32 @@
 }
 .content{
 	flex: 1 0 auto;
+	display: flex;
+	margin: 30px 130px;
+	a{
+		text-decoration: none;
+	}
+	a:nth-child(1):after{
+	content: 'Popular Series';
+	color: #000;
+	display: block;
+	margin-top: 10px;
+	}
+	a:nth-child(2):after{
+		content: 'Popular Movies';
+		color: #000;
+		display: block;
+		margin-top: 10px;
+	}
+}
+.cards{
+	height: 200px;
+	width: 150px;
+	background-color: #1e1e1e;
+	color: #fff;
+	margin-right: 25px;
+	text-transform: uppercase;
+	text-align: center;
+	font-size: 26px;
+	line-height: 200px;
 }
