@@ -21,14 +21,14 @@ export default class Footer extends React.Component {
                     <div>Copyright &copy; 2016 DEMO Streaming. All Rights Reserved.</div>
                     <div className={styles.external}>
                         <div className={styles.social}>
-                            <img className={styles.fb} />
-                            <img className={styles.twitter} />
-                            <img className={styles.insta} />
+                            <img className={styles.fb} alt="" />
+                            <img className={styles.twitter} alt="" />
+                            <img className={styles.insta} alt="" />
                         </div>
                         <div className={styles.store}>
-                            <img src={appStoreLogo} height="40" />
-                            <img src={playStoreLogo} height="40" />
-                            <img src={windowsStoreLogo} height="40" />
+                            <img src={appStoreLogo} height="40" alt="" />
+                            <img src={playStoreLogo} height="40" alt="" />
+                            <img src={windowsStoreLogo} height="40" alt="" />
                         </div>
                     </div>
                 </div>

@@ -17,9 +17,9 @@ export default class Series extends React.Component {
     }
 
     componentDidMount() {
-    	this.setState({
-    		productsFetchStatus: 'fetching',
-    	}, this.fetchAll);
+        this.setState({
+            productsFetchStatus: 'fetching',
+        }, this.fetchAll);
     }
 
     fetchAll() {
@@ -27,44 +27,46 @@ export default class Series extends React.Component {
 
         fetch(config.getMediaContent)
             .then(response => response.json())
-	    .then((data) => {
-	        data.entries.map((item) => {
-                    if (item.programType == 'series') { seriesItems.push(item); }
+            .then((data) => {
+                data.entries.map((item) => {
+                    if (item.programType === 'series') { seriesItems.push(item); }
                 });
-		    this.setState({
-		    	total: data.total,
-		    	items: seriesItems,
-		    	productsFetchStatus: 'fetched',
-		    });
-	    })
-	    .catch((err) => {
-	        console.log('Failed to load data', err);
-	        this.setState({
-	          productsFetchStatus: 'error',
-	        });
-	      });
+                this.setState({
+                    total: data.total,
+                    items: seriesItems,
+                    productsFetchStatus: 'fetched',
+                });
+            })
+            .catch((err) => {
+                console.log('Failed to load data', err);
+                this.setState({
+                    productsFetchStatus: 'error',
+                });
+            });
     }
 
     render() {
-    	const { total, items, productsFetchStatus } = this.state;
+        const { total, items, productsFetchStatus } = this.state;
         let route = this.props.location.pathname;
-        route = route.replace('/','').charAt(0).toUpperCase() + route.slice(2).toLowerCase();
+        route = route.replace('/', '').charAt(0).toUpperCase() + route.slice(2).toLowerCase();
 
         return (
             <div className={styles.container}>
-                <ActionBar route={route}/>
+                <ActionBar route={route} />
                 <div className={styles.content}>
-                    {productsFetchStatus == 'fetched'
+                    {productsFetchStatus === 'fetched'
                         ? (
                             <div className={styles.gridContainer}>
                                 {
 			                items.map((item, index) => (
     <ProductItem itemData={item} index={index} key={index} />
-			                ))
-			            }
+                                    ))
+                                }
                             </div>
                         )
-                        : <div style={{ margin: '35px 130px' }}>Loading...</div>
+                        : productsFetchStatus === 'fetching'
+                            ? <div style={{ margin: '35px 130px' }}>Loading...</div>
+                            : <div style={{ margin: '35px 130px' }}>Oops, something went wrong...</div>
                     }
                 </div>
                 <Footer />
