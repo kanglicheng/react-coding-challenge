@@ -5,7 +5,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 module.exports = env => ({
     entry: './main.jsx',
     output: {
-        path: path.join(__dirname, 'public'),
+        path: path.join(__dirname, 'dist'),
         filename: 'bundle.js',
     },
     mode: 'production',
@@ -44,7 +44,7 @@ module.exports = env => ({
             loader: 'file-loader',
             options: {
                 name: '[name].[ext]',
-                outputPath: 'fonts/',
+                outputPath: 'icons/',
             },
         },
         ],
