@@ -1,10 +1,10 @@
 ## Setup Instructions
 
 ```bash
-git clone https://github.com/subhban01/react-coding-challenge.git
-cd react-coding-challenge
-npm install
-npm start
+> git clone https://github.com/subhban01/react-coding-challenge.git
+> cd react-coding-challenge
+> npm install
+> npm start
 ```
 Open Google Chrome and go to `http://localhost:8080/`
 
