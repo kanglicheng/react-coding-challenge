@@ -4,16 +4,16 @@
 import React from 'react';
 import { mount, configure, shallow } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-import Movies from '../../components/Containers/Movies';
+import Series from '../../components/Containers/Series';
 import testData from '../../../feed/sample.json';
 
 
 configure({ adapter: new Adapter() });
-describe('Movies component: ', () => {
+describe('Series component: ', () => {
     let shallowWrap, fullWrap;
     beforeAll(() => {
-        shallowWrap = shallow(<Movies />);
-        fullWrap = mount(<Movies route="Movies"/>);
+        shallowWrap = shallow(<Series />);
+        fullWrap = mount(<Series route="Series"/>);
       });
     afterAll(() => {
         shallowWrap.unmount();
@@ -21,7 +21,7 @@ describe('Movies component: ', () => {
     })
 
     it('checking that the correct title is displayed in header', () => {
-        expect(fullWrap.find('.lower').text()).toEqual('Popular Movies');
+        expect(fullWrap.find('.lower').text()).toEqual('Popular Series');
     });
 
 
@@ -39,8 +39,8 @@ describe('Movies component: ', () => {
 
 
     it('check how many times render is called', () => {
-        const spy = jest.spyOn(Movies.prototype, 'render');
-        const wrapper = shallow(<Movies />);
+        const spy = jest.spyOn(Series.prototype, 'render');
+        const wrapper = shallow(<Series />);
         expect(spy).toHaveBeenCalledTimes(1);
     });
 });

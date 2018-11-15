@@ -11,8 +11,14 @@ export default function App() {
             <div>
                 <Switch>
                     <Route exact path="/" component={HomePage} />
-                    <Route path="/series" component={Series} />
-                    <Route path="/movies" component={Movies} />
+                    <Route
+                        path="/series"
+                        render={props => <Series {...props} route="Series" />}
+                    />
+                    <Route
+                        path="/movies"
+                        render={props => <Movies {...props} route="Movies" />}
+                    />
                 </Switch>
             </div>
         </BrowserRouter>

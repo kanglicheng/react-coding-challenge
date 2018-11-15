@@ -1,28 +1,39 @@
 import React from 'react';
+// import PropTypes from 'prop-types';
 import styles from './SeriesMovies.scss';
 import ActionBar from '../Presentational/ActionBar';
 import Footer from '../Presentational/Footer';
 import ProductItem from '../Presentational/ProductItem';
 import { getMediaContent, maxItems } from '../../../config.json';
+import Loader from '../Presentational/Loader';
 
 
 export default class Series extends React.Component {
+    // static propTypes = {
+    //     route: PropTypes.string,
+    // };
+
+    // static defaultProps = {
+    //     route: 'Series',
+    // }
+
     constructor(props) {
         super(props);
+        const { route } = props;
         this.state = {
             items: [],
-            productsFetchStatus: null, // null, 'fetching' or 'fetched'
+            isLoading: true,
+            isError: false,
+            route,
         };
     }
 
     componentDidMount() {
-        this.setState({
-            productsFetchStatus: 'fetching',
-        }, this.fetchAll);
+        this.fetchAll();
     }
 
     fetchAll() {
-        const seriesItems = [];
+        let seriesItems = [];
         let counter = 1;
 
         fetch(getMediaContent)
@@ -35,45 +46,48 @@ export default class Series extends React.Component {
                     }
                     return seriesItems;
                 });
+                seriesItems = seriesItems.sort(this.compare);
                 this.setState({
                     items: seriesItems,
-                    productsFetchStatus: 'fetched',
+                    isLoading: false,
                 });
             })
             .catch((err) => {
                 console.log('Failed to load data', err);
                 this.setState({
-                    productsFetchStatus: 'error',
+                    isError: true,
                 });
             });
     }
 
+    compare(a, b) {
+        if (a.title < b.title) return -1;
+        if (a.title > b.title) return 1;
+        return 0;
+    }
+
     render() {
-        const { items, productsFetchStatus } = this.state;
-        let route = this.props.location.pathname;
-        route = route.replace('/', '').charAt(0).toUpperCase() + route.slice(2).toLowerCase();
+        const {
+            items, isLoading, isError, route,
+        } = this.state;
+        // let route = this.props.location.pathname;
+        // route = route.replace('/', '').charAt(0).toUpperCase() + route.slice(2).toLowerCase();
 
         return (
             <div className={styles.container}>
                 <ActionBar route={route} />
                 <div className={styles.content}>
-                    {productsFetchStatus === 'fetched'
-                        && (
-                            <div className={styles.gridContainer}>
-                                {
-                                    items.map((item, index) => (
-                                        <ProductItem itemData={item} index={index} key={Number(index.toString())} />
-                                    ))
-                                }
-                            </div>
-                        )
-                    }
-                    {productsFetchStatus === 'fetching'
-                        && <div style={{ margin: '35px 130px' }}>Loading...</div>
-                    }
-                    {productsFetchStatus === 'error'
-                        && <div style={{ margin: '35px 130px' }}>Oops, something went wrong...</div>
-                    }
+                    <Loader
+                        isLoading={isLoading}
+                        isError={isError}
+                    />
+                    <div className={styles.gridContainer}>
+                        {
+                            items.map((item, index) => (
+                                <ProductItem itemData={item} index={index} key={Number(index.toString())} />
+                            ))
+                        }
+                    </div>
                 </div>
                 <Footer />
             </div>
