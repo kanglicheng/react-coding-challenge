@@ -1,3 +1,6 @@
+@import '../../../base.scss';
+
+
 .container{
 	background-color: #fff;
     min-height: 100vh;
@@ -13,4 +16,12 @@
 }
 .content{
 	flex: 1 0 auto;
+}
+
+
+@media (max-width: $break-small){
+	.gridContainer{
+		grid-template-columns: repeat(2, 1fr);
+		margin: 30px 30px;
+	}
 }
